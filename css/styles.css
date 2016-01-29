@@ -1,3 +1,33 @@
 #priceDisplayContainer {
   display: none;
+  font-size: 35px;
+  padding-top: 20px;
+}
+
+#toppingsContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#footer {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #339966;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 40px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: #339966;
+  margin-bottom: 15px;
+}
+
+body {
+  background-color: #ff9999;
+}
+
+a {
+  color: #006600;
 }
