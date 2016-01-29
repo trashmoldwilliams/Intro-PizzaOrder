@@ -32,14 +32,32 @@ var determineToppingPrice = function(toppingName) {
   return toppingPrice;
 }
 
+var determineSizePrice = function(sizeName) {
+  if (sizeName === "extraSmall"){
+    var sizePrice = 3;
+  } else if (sizeName === "small"){
+    var sizePrice = 5;
+  } else if (sizeName === "medium"){
+    var sizePrice = 7;
+  } else if (sizeName === "large"){
+    var sizePrice = 10;
+  } else if (sizeName === "extraLarge"){
+    var sizePrice = 15;
+  }
+  return sizePrice;
+}
+
 $(document).ready(function() {
-  event.preventDefault();
 
   $("form#pizzaBuilder").submit(function() {
-    var pizzaSize = $("select#pizzaSizeInput").val()
+    debugger;
+    event.preventDefault();
+    var sizeName = $("select#pizzaSizeInput").val()
+    var sizePrice = determineSizePrice(sizeName);
+    var currentSize = new Size(sizeName, sizePrice);
 
     var pizzaToppings = [];
-    for (var i = 1; i <= 3; i++) {
+    for (var i = 1; i < 4; i++) {
       var toppingName = $("input[name=option" + i + "]:checked", "form#pizzaBuilder").val();
       if (toppingName != undefined) {
         var toppingPrice = determineToppingPrice(toppingName);
@@ -47,5 +65,11 @@ $(document).ready(function() {
         pizzaToppings.push(currentTopping)
       }
     }
+
+    var currentPizza = new Pizza(pizzaToppings, currentSize);
+    var currentPizzaPrice = currentPizza.determinePizzaPrice();
+
+    $("span#displayPizzaPrice").text(currentPizzaPrice);
+    $("div#priceDisplayContainer").show();
   });
 });

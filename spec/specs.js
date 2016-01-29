@@ -38,3 +38,10 @@ describe('determineToppingPrice', function(toppingName) {
     expect(determineToppingPrice(testToppingName)).to.equal(2);
   });
 });
+
+describe('determineSizePrice', function(sizeName) {
+  it("will determine the price of the entered size", function() {
+    var testPizzaSize = "medium";
+    expect(determineSizePrice(testPizzaSize)).to.equal(7);
+  });
+});
