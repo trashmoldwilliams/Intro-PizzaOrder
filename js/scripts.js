@@ -3,6 +3,7 @@ function Topping(name, price) {
   this.price = price;
 }
 
+
 function Size(name, price) {
   this.name = name;
   this.price = price;
@@ -21,3 +22,11 @@ Pizza.prototype.determinePizzaPrice = function () {
   }
   return pizzaPrice;
 };
+
+$(document).ready(function() {
+  event.preventDefault();
+
+  $("form#pizzaBuilder").submit(function() {
+
+  });
+});
