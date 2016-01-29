@@ -62,7 +62,7 @@ $(document).ready(function() {
     var currentSize = new Size(sizeName, sizePrice);
 
     var pizzaToppings = [];
-    for (var i = 1; i < 4; i++) {
+    for (var i = 1; i < 22; i++) {
       var toppingName = $("input[name=option" + i + "]:checked", "form#pizzaBuilder").val();
       if (toppingName != undefined) {
         var toppingPrice = determineToppingPrice(toppingName);
