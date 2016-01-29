@@ -28,6 +28,6 @@ describe('Pizza', function() {
     var testTopping2 = new Topping("Olives", 1);
     var testSize = new Size("large", 10);
     var testPizza = new Pizza([testTopping1, testTopping2], testSize);
-    expect(testPizza.determinePizzaPrice()).to.equal(10);
+    expect(testPizza.determinePizzaPrice()).to.equal(13);
 });
 });
