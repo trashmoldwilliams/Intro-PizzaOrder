@@ -29,5 +29,12 @@ describe('Pizza', function() {
     var testSize = new Size("large", 10);
     var testPizza = new Pizza([testTopping1, testTopping2], testSize);
     expect(testPizza.determinePizzaPrice()).to.equal(13);
+  });
 });
+
+describe('determineToppingPrice', function(toppingName) {
+  it("will determine the price of the entered topping name", function() {
+    var testToppingName = "pepperoni";
+    expect(determineToppingPrice(testToppingName)).to.equal(2);
+  });
 });
