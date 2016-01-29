@@ -55,7 +55,6 @@ var determineSizePrice = function(sizeName) {
 $(document).ready(function() {
 
   $("form#pizzaBuilder").submit(function() {
-    debugger;
     event.preventDefault();
     var sizeName = $("select#pizzaSizeInput").val()
     var sizePrice = determineSizePrice(sizeName);
