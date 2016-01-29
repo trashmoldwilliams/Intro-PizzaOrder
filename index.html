@@ -9,6 +9,30 @@
     <title></title>
   </head>
   <body>
-
+    <div class="container">
+      <h1>Pizza Time</h1>
+      <form id="pizzaBuilder">
+        <div>
+          <label>Choose your pizza size:</label>
+          <select id="pizzaSizeInput" type="text">
+            <option value="extraSmall">Extra Small ($3)</option>
+            <option value="small">Small ($5)</option>
+            <option value="medium">Medium ($7)</option>
+            <option value="large">Large ($10)</option>
+            <option value="extraLarge">Extra Large ($15)</option>
+          </select>
+        </div>
+        <div>
+          <label>Choose your toppings:</label><br>
+          <input type="checkbox" name="optionPepperoni" value="Pepperoni"> Pepperoni ($2)<br>
+          <input type="checkbox" name="optionOlives" value="Olives"> Olives ($1)<br>
+          <input type="checkbox" name="optionExtraCheese" value="extraCheese"> Extra Cheese ($2)<br>
+        </div>
+        <button type="submit">Show Pizza Price</button>
+      </form>
+      <div id="priceDisplayContainer">
+        <span>This pizza costs $</span><span id="displayPizzaPrice"></span>
+      <div>
+    </div>
   </body>
 </html>

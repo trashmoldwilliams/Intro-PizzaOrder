@@ -23,7 +23,7 @@ describe('Pizza', function() {
     expect(testPizza.size).to.equal("large");
   });
 
-  it("calculates pizza price based on size and toppings", function() {
+  it("will calculate pizza price based on size and toppings", function() {
     var testTopping1 = new Topping("Pepperoni", 2);
     var testTopping2 = new Topping("Olives", 1);
     var testSize = new Size("large", 10);
