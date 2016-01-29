@@ -26,7 +26,8 @@ describe('Pizza', function() {
   it("calculates pizza price based on size and toppings", function() {
     var testTopping1 = new Topping("Pepperoni", 2);
     var testTopping2 = new Topping("Olives", 1);
-    var testPizza = new Pizza([testTopping1, testTopping2], "large");
+    var testSize = new Size("large", 10);
+    var testPizza = new Pizza([testTopping1, testTopping2], testSize);
     expect(testPizza.determinePizzaPrice()).to.equal(10);
 });
 });

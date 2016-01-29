@@ -16,7 +16,7 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.determinePizzaPrice = function () {
   var pizzaPrice = 0;
-  return pizzaPrice += 10;
+  return pizzaPrice += this.size.price;
   // for (var i = 0; i < this.toppings.length; i++) {
   //   pizzaPrice += this.toppings[i].price;
   // }
