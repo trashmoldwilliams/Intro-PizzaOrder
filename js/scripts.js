@@ -11,7 +11,6 @@ function Size(name, price) {
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
-  this.price = 0;
 }
 
 Pizza.prototype.determinePizzaPrice = function () {
@@ -24,10 +23,16 @@ Pizza.prototype.determinePizzaPrice = function () {
 
 var determineToppingPrice = function(toppingName) {
   var toppingPrice = 0;
-  if (toppingName === "olives"){
+  if (toppingName === "olives" || toppingName === "onions" || toppingName === "redPeppers" || toppingName === "spinach"){
     toppingPrice = 1;
-  } else if (toppingName === "pepperoni" || toppingName === "extraCheese") {
+  } else if (toppingName === "mushrooms" || toppingName === "bacon" || toppingName === "beef" || toppingName === "ham" || toppingName === "pepperoni" || toppingName === "sausage") {
     toppingPrice = 2;
+  } else if (toppingName === "artichokeHearts" || toppingName === "roastedEggplant" || toppingName === "roastedGarlic" || toppingName === "bbqChicken" || toppingName === "anchovies" || toppingName === "shrimp" || toppingName === "squid" || toppingName === "tuna") {
+    toppingPrice = 3;
+  } else if (toppingName === "oysters" || toppingName === "salmon") {
+    toppingPrice = 4;
+  } else if (toppingName === "lobster") {
+    toppingPrice = 5;
   }
   return toppingPrice;
 }
