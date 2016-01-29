@@ -22,4 +22,11 @@ describe('Pizza', function() {
     expect(testPizza.toppings).to.eql([testTopping1, testTopping2]);
     expect(testPizza.size).to.equal("large");
   });
+
+  it("calculates pizza price based on size and toppings", function() {
+    var testTopping1 = new Topping("Pepperoni", 2);
+    var testTopping2 = new Topping("Olives", 1);
+    var testPizza = new Pizza([testTopping1, testTopping2], "large");
+    expect(testPizza.determinePizzaPrice()).to.equal(10);
+});
 });
