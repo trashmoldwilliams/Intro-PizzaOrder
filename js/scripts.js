@@ -22,19 +22,6 @@ Pizza.prototype.determinePizzaPrice = function () {
   return pizzaPrice;
 };
 
-var constructAllToppings = function() {
-  var pizzaToppings = [];
-  for (var i = 1; i <= 3; i++) {
-    var toppingName = $("input[name=option" + i + "]:checked", "form#pizzaBuilder").val();
-    if (toppingName != undefined) {
-      var toppingPrice = determineToppingPrice(toppingName);
-      var currentTopping = new Topping(toppingName, toppingPrice);
-      pizzaToppings.push(currentTopping);
-    }
-  }
-  return pizzaToppings;
-}
-
 var determineToppingPrice = function(toppingName) {
   var toppingPrice = 0;
   if (toppingName === "olives"){
@@ -50,6 +37,15 @@ $(document).ready(function() {
 
   $("form#pizzaBuilder").submit(function() {
     var pizzaSize = $("select#pizzaSizeInput").val()
-    var pizzaToppings = constructAllToppings;
+
+    var pizzaToppings = [];
+    for (var i = 1; i <= 3; i++) {
+      var toppingName = $("input[name=option" + i + "]:checked", "form#pizzaBuilder").val();
+      if (toppingName != undefined) {
+        var toppingPrice = determineToppingPrice(toppingName);
+        var currentTopping = new Topping(toppingName, toppingPrice);
+        pizzaToppings.push(currentTopping)
+      }
+    }
   });
 });
